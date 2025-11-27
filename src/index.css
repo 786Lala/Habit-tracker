@@ -1,0 +1,65 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (max-width: 768px) {
+  .grid-cols-7 { grid-template-columns: repeat(2, 1fr) !important; } /* stack calendar compactly on mobile */
+  .container { padding-left: 12px; padding-right: 12px; }
+  .frost-card { padding: 12px !important; }
+}
+
+
+:root{
+  --brand: #14C38E;
+  --accent: #7EE7C6;
+  --glass: rgba(255,255,255,0.06);
+  --panel: #0b0f12;
+  --muted: #9aa4ad;
+}
+
+html,body,#root{height:100%;}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#05060a 0%, #07121a 60%);color:#eafaf1}
+
+/* frosted card */
+.frost-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+
+/* subtle glowing outline */
+.glow {
+  box-shadow: 0 4px 22px rgba(20,195,142,0.14), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+/* container helper */
+.container{@apply mx-auto px-6 max-w-7xl}
+
+/* card helper using tailwind @apply */
+.card { @apply rounded-2xl p-5; }
+
+/* small utility */
+.text-muted{ color: var(--muted) }
+/* mobile calendar / layout tweaks */
+@media (max-width: 900px) {
+  .container { padding-left: 14px; padding-right: 14px; }
+  .frost-card { padding: 12px !important; border-radius: 16px; }
+  .grid-cols-7 { grid-template-columns: repeat(2, 1fr) !important; } /* simpler compact fallback */
+  .min-h-\[96px\] { min-height: 88px !important; }
+  .min-h-\[120px\] { min-height: 110px !important; }
+  .card { padding: 12px !important; }
+  .text-sm { font-size: 13px; }
+}
+
+/* small improvements for hovering on touch devices */
+.group:hover .group-hover\:visible { visibility: visible; opacity: 1; }
+
+/* small tweak for ICS/CSV buttons on mobile */
+@media (max-width: 480px) {
+  .container { padding-left: 10px; padding-right: 10px; }
+  .frost-card img { width: 100%; height: auto; }
+}
+

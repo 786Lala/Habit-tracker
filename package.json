@@ -1,0 +1,36 @@
+{
+  "name": "habit-journal-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.30.0",
+    "file-saver": "^2.0.5",
+    "framer-motion": "^10.12.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^3.5.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^14.0.0",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.0",
+    "vitest": "^0.34.0"
+  }
+}
