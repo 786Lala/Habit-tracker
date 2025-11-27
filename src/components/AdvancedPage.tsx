@@ -4,6 +4,8 @@ import CalendarView from './CalendarView'
 import { entriesToICS, downloadICS } from '../utils/exportToICS'
 import { downloadCSV } from '../utils/csv'
 import ImportCSVModal from './ImportCSVModal'
+import {openWeeklyPrint} from '../utils/weeklyPdf'
+
 
 const TEMPLATE_SET = [
   { name: 'Daily Walk', unit: 'steps', daily_goal: 10000, color: '#14C38E' },
@@ -51,6 +53,7 @@ export default function AdvancedPage() {
           <button onClick={() => setImportOpen(true)} className="px-3 py-2 rounded bg-white/5">Import CSV</button>
           <button onClick={exportEntriesCSV} className="px-3 py-2 rounded bg-white/5">Export Entries CSV</button>
           <button onClick={exportICSAll} className="px-3 py-2 rounded bg-white/5">Export Calendar (.ics)</button>
+          <button onClick={()=>openWeeklyPrint()} className="px-3 py-2 rounded bg-white/5">Print Weekly PDF</button>
         </div>
       </div>
 
